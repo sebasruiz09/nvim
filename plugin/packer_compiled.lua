@@ -91,6 +91,26 @@ _G.packer_plugins = {
     path = "/home/sebas/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/sebas/.local/share/nvim/site/pack/packer/start/packer.nvim",

@@ -1,1 +1,0 @@
-  -- color scheme pending and plugins with packer install

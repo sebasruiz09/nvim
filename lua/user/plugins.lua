@@ -40,18 +40,25 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-    --my plugins here
-
-
-
-
-
-
-
+  --my plugins here
   use "wbthomason/packer.nvim" --Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the popup Api form vim in nvim
   use "nvim-lua/plenary.nvim" -- useful lua functions uset ny lots of plugins
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+
+  -- use neotree
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
+
+  -- colors scheme
+  use 'mhartington/oceanic-next'
 
   use {
     'w0rp/ale',
@@ -59,7 +66,6 @@ return packer.startup(function(use)
     cmd = 'ALEEnable',
     config = 'vim.cmd[[ALEEnable]]'
   }
-
 
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
   use {'andymass/vim-matchup', event = 'VimEnter'}
