@@ -11,7 +11,8 @@ local options = {
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
   showtabline = 2,                       -- always show tabs
-  smartcase = true,                        -- smart case
+  smartcase = true, 
+  showmode = false,-- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                     -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
@@ -31,7 +32,6 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "monospace",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"

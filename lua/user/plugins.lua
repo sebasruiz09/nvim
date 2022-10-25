@@ -57,6 +57,13 @@ return packer.startup(function(use)
     }
   }
 
+  use 'neovim/nvim-lspconfig' -- Configurations for LSP
+  -- lualine settings
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
   -- colors scheme
   use 'mhartington/oceanic-next'
 
@@ -70,7 +77,8 @@ return packer.startup(function(use)
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
   use {'andymass/vim-matchup', event = 'VimEnter'}
 
+
  --Automatically set up your configuration after cloning packer.nvim
   -- Put this as the end after plugins
-
+  --
 end)
