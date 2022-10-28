@@ -83,6 +83,21 @@ _G.packer_plugins = {
     path = "/home/sebas/.local/share/nvim/site/pack/packer/opt/ale",
     url = "https://github.com/w0rp/ale"
   },
+  amora = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/amora",
+    url = "https://github.com/owozsh/amora"
+  },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
+  ["everblush.vim"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/everblush.vim",
+    url = "https://github.com/mangeshrex/everblush.vim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/sebas/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -136,6 +151,16 @@ _G.packer_plugins = {
     path = "/home/sebas/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["vim-atom-dark"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/vim-atom-dark",
+    url = "https://github.com/gosukiwi/vim-atom-dark"
+  },
+  ["vim-aurora"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/vim-aurora",
+    url = "https://github.com/rafalbromirski/vim-aurora"
+  },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
     loaded = false,
@@ -151,6 +176,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/sebas/.local/share/nvim/site/pack/packer/opt/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
+  },
+  ["vim-snazzy"] = {
+    loaded = true,
+    path = "/home/sebas/.local/share/nvim/site/pack/packer/start/vim-snazzy",
+    url = "https://github.com/connorholyday/vim-snazzy"
   }
 }
 
@@ -158,12 +188,12 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ALEEnable lua require("packer.load")({'ale'}, { cmd = "ALEEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ALEEnable lua require("packer.load")({'ale'}, { cmd = "ALEEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

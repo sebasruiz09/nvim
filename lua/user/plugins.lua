@@ -60,12 +60,18 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig' -- Configurations for LSP
   -- lualine settings
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
   -- colors scheme
-  use 'mhartington/oceanic-next'
+ use 'mhartington/oceanic-next'
+ use 'Mofiqul/dracula.nvim'
+ use 'gosukiwi/vim-atom-dark'
+ use 'connorholyday/vim-snazzy'
+ use { "mangeshrex/everblush.vim" }
+ use 'owozsh/amora'
+ use 'rafalbromirski/vim-aurora'
+
 
   use {
     'w0rp/ale',

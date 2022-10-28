@@ -7,14 +7,5 @@
 ## description
 ```nvim/vim editor personal configuration repository```
 
-## folder structure
 
-```init.lua
-lua
- -user
-   -options.lua
-   -colorscheme.lua
- -settings
-   -keymaps.lua
-   -plugins.lua
-```
+
