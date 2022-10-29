@@ -5,6 +5,7 @@ require "user.colorschema"
 require "plugins.neo-tree"
 require "plugins.lualine"
 require "plugins.lsp"
+require "plugins.telescope.telescope"
 
   vim.opt.fillchars = { 
     vert = "▕", -- alternatives │

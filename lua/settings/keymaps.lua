@@ -52,7 +52,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Terminal --
 
 -- neotree open or close
-keymap('n', '<C-n>', ':Neotree toggle<CR>', opts)       -- open/close
+keymap('n', '<C-n>', ':Neotree toggle<CR>', opts)   
+-- open/close
+keymap('n', '<C-p>', ':Telescope<CR>', opts)       -- open/close
 
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
