@@ -20,8 +20,8 @@ require("neo-tree").setup({
   enable_diagnostics = true,
   default_component_configs = {
     indent = {
-      indent_size = 2,
-      padding = 1, -- extra padding on left hand side
+     indent_size = 2,
+      padding = 2, -- extra padding on left hand side
       -- indent guides
       with_markers = true,
       indent_marker = "│",
@@ -61,7 +61,7 @@ require("neo-tree").setup({
   },
   window = {
     position = "left",
-    width = 40,
+    width = 50,
     mappings = {
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",

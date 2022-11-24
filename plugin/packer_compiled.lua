@@ -129,7 +129,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["oceanic-next"] = {
     loaded = true,
@@ -156,6 +156,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["vim-atom-dark"] = {
     loaded = true,
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-atom-dark",
@@ -165,6 +171,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-aurora",
     url = "https://github.com/rafalbromirski/vim-aurora"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
@@ -182,6 +193,13 @@ _G.packer_plugins = {
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
   },
+  ["vim-prettier"] = {
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
+  },
   ["vim-snazzy"] = {
     loaded = true,
     path = "C:\\Users\\Betenlace\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-snazzy",
@@ -190,37 +208,99 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ALEEnable lua require("packer.load")({'ale'}, { cmd = "ALEEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType cmake ++once lua require("packer.load")({'ale'}, { ft = "cmake" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType racket ++once lua require("packer.load")({'ale'}, { ft = "racket" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'ale'}, { ft = "tex" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cpp ++once lua require("packer.load")({'ale'}, { ft = "cpp" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cmake ++once lua require("packer.load")({'ale'}, { ft = "cmake" }, _G.packer_plugins)]]
+vim.cmd [[au FileType racket ++once lua require("packer.load")({'ale'}, { ft = "racket" }, _G.packer_plugins)]]
+vim.cmd [[au FileType txt ++once lua require("packer.load")({'ale'}, { ft = "txt" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType less ++once lua require("packer.load")({'vim-prettier'}, { ft = "less" }, _G.packer_plugins)]]
+vim.cmd [[au FileType scss ++once lua require("packer.load")({'vim-prettier'}, { ft = "scss" }, _G.packer_plugins)]]
+vim.cmd [[au FileType graphql ++once lua require("packer.load")({'vim-prettier'}, { ft = "graphql" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale', 'vim-prettier'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-prettier'}, { ft = "vue" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'ale', 'vim-prettier'}, { ft = "html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType md ++once lua require("packer.load")({'ale'}, { ft = "md" }, _G.packer_plugins)]]
+vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-matchup'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\css.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\css.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\css.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\graphql.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\graphql.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\graphql.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\html.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\html.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\html.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\javascript.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\javascript.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\javascript.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\json.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\json.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\json.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\less.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\less.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\less.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\lua.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\lua.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\lua.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\markdown.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\markdown.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\markdown.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\php.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\php.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\php.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\ruby.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\ruby.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\ruby.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\scss.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\scss.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\scss.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\svelte.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\svelte.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\svelte.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\typescript.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\typescript.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\typescript.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\vue.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\vue.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\vue.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\xml.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\xml.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\xml.vim]], false)
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\yaml.vim]], true)
+vim.cmd [[source C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\yaml.vim]]
+time([[Sourcing ftdetect script at: C:\Users\Betenlace\AppData\Local\nvim-data\site\pack\packer\opt\vim-prettier\ftdetect\yaml.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false

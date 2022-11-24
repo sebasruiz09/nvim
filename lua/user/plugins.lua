@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the popup Api form vim in nvim
   use "nvim-lua/plenary.nvim" -- useful lua functions uset ny lots of plugins
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
-
+  use "ryanoasis/vim-devicons"
   -- use neotree
   use {
   "nvim-neo-tree/neo-tree.nvim",
@@ -57,6 +57,18 @@ return packer.startup(function(use)
     }
   }
 
+  -- terminal plug
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
+
+  use {
+      'prettier/vim-prettier',
+      run = 'yarn install',
+      ft = {'javascript', 'typescript', 'css', 'less','scss', 'graphql', 'markdown', 'vue', 'html'}
+  }
+
+  use 'nvim-tree/nvim-web-devicons'
   use 'neovim/nvim-lspconfig' -- Configurations for LSP
   -- lualine settings
   use {
@@ -83,7 +95,7 @@ use {
 
   use {
     'w0rp/ale',
-    ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+    ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'txt','md'},
     cmd = 'ALEEnable',
     config = 'vim.cmd[[ALEEnable]]'
   }

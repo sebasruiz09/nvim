@@ -50,11 +50,12 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
-
+keymap('n', '<C-t>', ':ToggleTerm<CR>' ,opts)
 -- neotree open or close
 keymap('n', '<C-n>', ':Neotree toggle<CR>', opts)   
 -- open/close
 keymap('n', '<C-p>', ':Telescope<CR>', opts)       -- open/close
+keymap('n', '<C-f>', ':Prettier<CR>', opts)
 
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
