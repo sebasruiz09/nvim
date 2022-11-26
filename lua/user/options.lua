@@ -32,7 +32,9 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  encoding = "UTF-8"
+  encoding = "UTF-8",
+
+
 }
 
 vim.opt.shortmess:append "c"

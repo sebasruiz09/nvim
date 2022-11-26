@@ -65,6 +65,7 @@ require("neo-tree").setup({
     mappings = {
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
+      ["t"] = "open_tabnew",
       ["S"] = "open_split",
       ["s"] = "open_vsplit",
       ["C"] = "close_node",
