@@ -88,6 +88,11 @@ return packer.startup(function(use)
   --lightspeed
   use "ggandor/lightspeed.nvim"
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
 
   use {
     "williamboman/mason.nvim",
