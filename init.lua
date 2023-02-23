@@ -9,6 +9,7 @@ require "plugins.telescope.telescope"
 require "plugins.nvim-web-devicons"
 require "plugins.tabby"
 require "plugins.nvim-cmp"
+require "plugins.formatter.formatter"
 
 vim.lsp.set_log_level("debug")
 

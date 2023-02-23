@@ -21,6 +21,9 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 -- lsp keymap
 vim.keymap.set("n", "K", vim.lsp.buf.hover) 
 
+--formatter
+        keymap("n", "<leader>q", ":lua vim.lsp.buf.formatting()<CR>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)

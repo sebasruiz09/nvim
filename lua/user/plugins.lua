@@ -61,6 +61,8 @@ return packer.startup(function(use)
   use 'nanozuki/tabby.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
+  -- formatter
+
   -- terminal plug
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
@@ -87,6 +89,7 @@ return packer.startup(function(use)
 
   --lightspeed
   use "ggandor/lightspeed.nvim"
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   use {
     "windwp/nvim-autopairs",
