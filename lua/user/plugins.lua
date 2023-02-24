@@ -46,11 +46,13 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- useful lua functions uset ny lots of plugins
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
   use "ryanoasis/vim-devicons"
+
+  use 'scrooloose/nerdcommenter'
   -- use neotree
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -61,8 +63,6 @@ return packer.startup(function(use)
   use 'nanozuki/tabby.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
-  -- formatter
-
   -- terminal plug
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
@@ -71,16 +71,16 @@ return packer.startup(function(use)
   use {
     'prettier/vim-prettier',
     run = 'yarn install',
-    ft = {'javascript', 'typescript', 'css', 'less','scss', 'graphql', 'markdown', 'vue', 'html'}
+    ft = {'javascript', 'typescript', 'css', 'less','scss', 'graphql', 'markdown', 'vue', 'html' ,'lua', 'nestjs'}
   }
 
   -- nvim-cmp
   use {
     "hrsh7th/nvim-cmp" , requires = {
-      'neovim/nvim-lspconfig',  
-      'hrsh7th/cmp-nvim-lsp',  
-      'hrsh7th/cmp-buffer',  
-      'hrsh7th/cmp-path',  
+      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip'
@@ -89,7 +89,6 @@ return packer.startup(function(use)
 
   --lightspeed
   use "ggandor/lightspeed.nvim"
-  use 'jose-elias-alvarez/null-ls.nvim'
 
   use {
     "windwp/nvim-autopairs",

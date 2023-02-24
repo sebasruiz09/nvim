@@ -9,9 +9,10 @@ require "plugins.telescope.telescope"
 require "plugins.nvim-web-devicons"
 require "plugins.tabby"
 require "plugins.nvim-cmp"
-require "plugins.formatter.formatter"
 
 vim.lsp.set_log_level("debug")
+vim.g.neotree_hide_dotfiles = false
+
 
   vim.opt.fillchars = { 
     vert = "▕", -- alternatives │
@@ -23,5 +24,7 @@ vim.lsp.set_log_level("debug")
     foldsep = "│",
     foldclose = "▸",
   }
+
+
 
 vim.opt.guifont = { "JetBrains Mono", "h12" }

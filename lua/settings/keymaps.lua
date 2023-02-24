@@ -19,10 +19,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- lsp keymap
-vim.keymap.set("n", "K", vim.lsp.buf.hover) 
-
---formatter
-        keymap("n", "<leader>q", ":lua vim.lsp.buf.formatting()<CR>", opts)
+vim.keymap.set("n", "k", vim.lsp.buf.hover) 
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
