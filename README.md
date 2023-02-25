@@ -41,7 +41,7 @@ JetBrainsMono Nerd Font Mono
 C:\Users\user\AppData\Local
 ```
 
-- clones the following repository in the directory located
+- clone the following repository in the directory located
 ```
 git clone https://github.com/sebasruiz09/nvim.git
 ```
@@ -73,24 +73,27 @@ git clone https://github.com/sebasruiz09/nvim.git
 
 - once opened use the ```:w``` or ```:packerInstall``` command to install all packages
 
+<br>
+
+### Pluggins
+<hr>
 
 | Pluggins         | Description                                          | link |
 |------------------|------------------------------------------------------|------|
-| Packer           | A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config                                           |
-| plenary          | Next item                                            |
-| vim-dispatch     | Next item                                            |
-| vim-devicons     | icons for NerdTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more                                           |
-| nerdcommenter    | Vim plugin for intensive commenting for all programming languages.                                          |
-| neotree          | Neovim plugin to manage the file system and other tree like structures.                                            |
-| nvim-web-devicons| more Icons                                         |
-| toggleterm       | A neovim lua plugin to help easily manage multiple terminal windows                                           |
-| vimprettier      | Prettier plugin for neovim to code format                                           |
-| nvim-cmp         | A completion plugin for neovim coded in Lua.                                          |
-| lightspeed       | motion plugin using incremental input processing, allowing for unparalleled speed with minimal interruptions                                            |
-| nvim-autopairs   | self-closing pairs : example { } [ ] ( )                                          |
-| mason            | Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.                                            |
-| mason-lspconfig  | Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim. Strongly recommended for Windows users.                                            |
-| nvim-lspconfig   | Nvim LSP                                            |
-| lualine          | A blazing fast and easy to configure neovim statusline plugin written in pure lua.                                            |
-| telescope        | s a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization.                                           |
-| markdown-preview | markdown-preview for nvim                                           |
+| Packer           | A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config                                           |  https://github.com/wbthomason/packer.nvim
+| plenary          |                                   | https://github.com/nvim-lua/plenary.nvim
+| vim-devicons     | icons for NerdTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more | https://github.com/ryanoasis/vim-devicons
+| nerdcommenter    | Vim plugin for intensive commenting for all programming languages.  | https://github.com/preservim/nerdcommenter
+| neotree          | Neovim plugin to manage the file system and other tree like structures. | https://github.com/nvim-neo-tree/neo-tree.nvim
+| nvim-web-devicons| more Icons     |  https://github.com/nvim-tree/nvim-web-devicons
+| toggleterm       | A neovim lua plugin to help easily manage multiple terminal windows | https://github.com/akinsho/toggleterm.nvim
+ | vimprettier      | Prettier plugin for neovim to code format | https://github.com/prettier/vim-prettier
+| nvim-cmp         | A completion plugin for neovim coded in Lua.  | https://github.com/hrsh7th/nvim-cmp
+| lightspeed       | motion plugin using incremental input processing, allowing for unparalleled speed with minimal interruptions                                            | https://github.com/ggandor/lightspeed.nvim
+| nvim-autopairs   | self-closing pairs : example { } [ ] ( )  | https://github.com/windwp/nvim-autopairs
+| mason            | Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.                                            | https://github.com/williamboman/mason.nvim
+| mason-lspconfig  | Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim. Strongly recommended for Windows users.                             |  https://github.com/williamboman/mason-lspconfig.nvim
+| nvim-lspconfig   | Nvim LSP   | https://github.com/neovim/nvim-lspconfig
+| lualine          | A blazing fast and easy to configure neovim statusline plugin written in pure lua. | https://github.com/nvim-lualine/lualine.nvim
+| telescope        | s a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization. | https://github.com/nvim-telescope/telescope.nvim
+| markdown-preview | markdown-preview for nvim | https://github.com/iamcco/markdown-preview.nvim
