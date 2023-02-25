@@ -19,7 +19,9 @@ require('telescope').setup {
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {"./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*"},
+    file_ignore_patterns = {
+      "node_modules/*",".angular/*",".git/*",".vscode/*",
+    },
     generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
     path_display = {'tail'},
     winblend = 0,

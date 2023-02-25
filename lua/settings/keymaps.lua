@@ -21,6 +21,8 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 -- lsp keymap
 vim.keymap.set("n", "k", vim.lsp.buf.hover) 
 
+vim.api.nvim_set_keymap('n', '<leader>c', '<plug>NERDCommenterComment', opts)
+vim.api.nvim_set_keymap('v', '<leader>c', '<plug>NERDCommenterComment', opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
