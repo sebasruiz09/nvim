@@ -42,6 +42,7 @@ require("neo-tree").setup({
     name = {
       trailing_slash = false,
       use_git_status_colors = true,
+      highlight="NeoTreeFile",
     },
     git_status = {
       symbols = {
@@ -51,9 +52,9 @@ require("neo-tree").setup({
         modified  = "",
         renamed   = "",
         -- Status type
-        untracked = "",
+        untracked = "?",
         ignored   = "",
-        unstaged  = "",
+        unstaged  = "+",
         staged    = "",
         conflict  = "",
       }

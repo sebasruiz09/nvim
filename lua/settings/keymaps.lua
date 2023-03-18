@@ -17,17 +17,22 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
+--keymap('n', 's', '<Nop>', opts)
 -- lsp keymap
 vim.keymap.set("n", "k", vim.lsp.buf.hover) 
 
-vim.api.nvim_set_keymap('n', '<leader>c', '<plug>NERDCommenterComment', opts)
-vim.api.nvim_set_keymap('v', '<leader>c', '<plug>NERDCommenterComment', opts)
+
+--lightspeed keymaps
+keymap('n', '<leader>s', '<Plug>Lightspeed_s', opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
+
+
+
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -62,8 +67,10 @@ keymap('n', '<C-n>', ':Neotree toggle<CR>', opts)
 keymap('n', '<C-p>', ':Telescope<CR>', opts)       -- open/close
 keymap('n', '<C-f>', ':Prettier<CR>', opts)
 
+keymap('v', '<leader>s', '<Plug>VSurround', opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+

@@ -14,7 +14,7 @@ vim.lsp.set_log_level("debug")
 vim.g.neotree_hide_dotfiles = false
 
 
-  vim.opt.fillchars = { 
+vim.opt.fillchars = { 
     vert = "▕", -- alternatives │
     fold = " ",
     eob = " ", -- suppress ~ at EndOfBuffer
@@ -23,8 +23,5 @@ vim.g.neotree_hide_dotfiles = false
     foldopen = "▾",
     foldsep = "│",
     foldclose = "▸",
-  }
+}
 
-
-
-vim.opt.guifont = { "JetBrains Mono", "h12" }

@@ -76,7 +76,7 @@ return packer.startup(function(use)
 
   -- nvim-cmp
   use {
-    "hrsh7th/nvim-cmp" , requires = {
+    "hrsh7th/nvim-cmp", requires = {
       'neovim/nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
@@ -94,6 +94,14 @@ return packer.startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
+
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({})
+    end
+  })
 
 
   use {
@@ -115,15 +123,15 @@ return packer.startup(function(use)
   }
 
   -- colors scheme
-  use 'mhartington/oceanic-next'
   use 'Mofiqul/dracula.nvim'
-  use 'gosukiwi/vim-atom-dark'
-  use 'connorholyday/vim-snazzy'
-  use { "mangeshrex/everblush.vim" }
-  use 'owozsh/amora'
   use 'rafalbromirski/vim-aurora'
 
   use "onsails/lspkind.nvim"
+
+  -- notifier
+  use  "rcarriga/nvim-notify"
+
+
 
   use {
     'w0rp/ale',

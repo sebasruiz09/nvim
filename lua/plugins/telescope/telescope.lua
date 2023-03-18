@@ -2,7 +2,7 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
     layout_config = {
-      width = 0.75,
+      width = 0.80,
       prompt_position = "top",
       preview_cutoff = 120,
       horizontal = {mirror = false},
