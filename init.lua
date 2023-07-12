@@ -1,18 +1,4 @@
-require "user.options"
-require "user.plugins"
-require "settings.keymaps"
-require "user.colorschema"
-require "plugins.neo-tree"
-require "plugins.lualine"
-require "plugins.mason"
-require "plugins.telescope.telescope"
-require "plugins.nvim-web-devicons"
-require "plugins.tabby"
-require "plugins.nvim-cmp"
-
-vim.lsp.set_log_level("debug")
-vim.g.neotree_hide_dotfiles = false
-
+require "config"
 
 vim.opt.fillchars = { 
     vert = "▕", -- alternatives │
@@ -24,4 +10,3 @@ vim.opt.fillchars = {
     foldsep = "│",
     foldclose = "▸",
 }
-
