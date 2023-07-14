@@ -11,12 +11,19 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("lazy").setup({
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme tokyonight]])
-  end,
+	spec = {
+		{ import="plugins"},
+	},
+	checker = { enable = true , notify = false },
+	dev = {
+		paths = {
+			"~/plugins,",
+			"~/plugins/telescope"
+		},
+		fallback = true,
+		patterns = {"sebasruiz"},
+	},
 })
 

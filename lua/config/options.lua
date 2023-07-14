@@ -1,6 +1,5 @@
 local options = {
  backup = false,
- clipboard = "unnamedplus",
  cmdheight = 1,
  completeopt = {"menuone","noselect"},
  conceallevel = 0,
@@ -8,7 +7,7 @@ local options = {
  encoding = "utf-8",
  hlsearch = true,
  ignorecase = true,
- mouse = "a",
+ mouse = "",
  pumheight = 10,
  showtabline = 2,
  smartcase = true,
