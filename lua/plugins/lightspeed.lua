@@ -1,3 +1,3 @@
 return {
-    'ggandor/lightspeed.nvim'
+  'ggandor/lightspeed.nvim'
 }

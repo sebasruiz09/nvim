@@ -49,7 +49,7 @@ return {
         layout_strategy = "horizontal",
         file_sorter = sorters.get_fuzzy_file,
         file_ignore_patterns = {
-          "node_modules/*", ".angular/*", ".git/*", ".vscode/*"
+          "node_modules/*", ".angular/*", ".git", ".vscode/*"
         },
         extensions = {
           override_generic_sorter = false,
@@ -57,6 +57,5 @@ return {
         }
       }
     }
-    vim.cmd([[Telescope]])
   end
 }
