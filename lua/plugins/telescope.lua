@@ -4,7 +4,6 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "nvim-lua/popup.nvim" },
     { "nvim-telescope/telescope-fzy-native.nvim" },
-    { 'nvim-telescope/telescope-media-files.nvim' },
     { "kyazdani42/nvim-web-devicons" },
     { "nvim-telescope/telescope-file-browser.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" }, {
@@ -19,13 +18,10 @@ return {
     }
   }
   },
-  event = "VeryLazy",
   config = function()
     local sorters = require('telescope.sorters')
     local actions = require "telescope.actions"
-    local custom_mappings = { ["<C-SPACE>"] = actions.select_vertical }
 
-    require("telescope").load_extension("media_files")
     require("telescope").load_extension "file_browser"
     require("telescope").setup {
       defaults = {
@@ -55,10 +51,6 @@ return {
         file_ignore_patterns = {
           "node_modules/*", ".angular/*", ".git", ".vscode/*"
         },
-        extensions = {
-          override_generic_sorter = false,
-          override_file_sorter = true,
-        }
       }
     }
   end

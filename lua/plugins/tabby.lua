@@ -17,7 +17,7 @@ return {
     require('tabby.tabline').set(function(line)
       return {
         {
-          { '  sebas-PC', hl = theme.head },
+          { '  sebas-PC   ', hl = theme.head },
           line.sep('', theme.head, theme.fill),
         },
         line.tabs().foreach(function(tab)
@@ -26,8 +26,6 @@ return {
             line.sep('', hl, theme.fill),
             tab.is_current() and '' or '󰆣',
             tab.number(),
-            tab.current_win().file_icon(),
-            tab.name(),
             line.sep('', hl, theme.fill),
             hl = hl,
             margin = ' ',

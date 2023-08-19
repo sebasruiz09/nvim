@@ -33,3 +33,22 @@ keymap('n', 'nv', ':Navbuddy<CR>', opts)
 
 --toggle terms
 keymap('n', '<C-t>', ':ToggleTerm<CR>', opts)
+
+-- spectre
+keymap('n', '<leader>l', '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = "Toggle Spectre"
+})
+
+keymap('v', '<leader>lw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "Search current word"
+})
+
+keymap('n', '<leader>ll', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "Search on current file"
+})
+
+--resize windows
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
