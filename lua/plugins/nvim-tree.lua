@@ -8,10 +8,16 @@ return {
       },
       renderer = {
         group_empty = false,
+        highlight_opened_files = "◉",
+        indent_markers = {
+          enable = true
+        }
       },
       filters = {
         dotfiles = true,
       }
     })
+    vim.g.loader_netrw = 1
+    vim.g.loader_netrwPlugin = 1
   end
 }
