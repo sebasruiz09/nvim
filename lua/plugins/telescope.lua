@@ -33,7 +33,7 @@ return {
           width = 0.80,
           prompt_position = "top",
           preview_cutoff = 120,
-          horizontal = { mirror = false },
+
           vertical = { mirror = false }
         },
         find_command = {

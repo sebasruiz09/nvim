@@ -9,6 +9,7 @@ return {
       renderer = {
         group_empty = false,
         highlight_opened_files = "◉",
+        root_folder_label = false,
         indent_markers = {
           enable = true
         }

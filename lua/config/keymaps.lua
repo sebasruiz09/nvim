@@ -20,6 +20,7 @@ keymap('n', '<leader>s', '<Plug>Lightspeed_s', opts)
 -- telescope
 keymap('n', '<C-p>', ':Telescope<CR>', opts)
 keymap('n', '<C-b>', ':Telescope file_browser<CR>', opts)
+keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
 
 -- terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)

@@ -6,8 +6,7 @@ return {
     require('tabby').setup()
 
     local theme = {
-      fill = 'TabLineFill',
-      -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
+      fill = { 'TabLineFill', style = "italic" },
       head = 'TabLine',
       current_tab = 'TabLineSel',
       tab = 'TabLine',
@@ -17,15 +16,15 @@ return {
     require('tabby.tabline').set(function(line)
       return {
         {
-          { '  sebas-PC   ', hl = theme.head },
+          { '  ', hl = theme.head },
           line.sep('', theme.head, theme.fill),
         },
         line.tabs().foreach(function(tab)
           local hl = tab.is_current() and theme.current_tab or theme.tab
           return {
             line.sep('', hl, theme.fill),
-            tab.is_current() and '' or '󰆣',
             tab.number(),
+            tab.is_current() and '' or '󰆣',
             line.sep('', hl, theme.fill),
             hl = hl,
             margin = ' ',
@@ -36,7 +35,6 @@ return {
           return {
             line.sep('', theme.win, theme.fill),
             win.is_current() and '' or '',
-            win.buf_name(),
             win.file_icon(),
             line.sep('', theme.win, theme.fill),
             hl = theme.win,
@@ -45,7 +43,7 @@ return {
         end),
         {
           line.sep('', theme.tail, theme.fill),
-          { '  ', hl = theme.tail },
+          { ' sᴇʙᴀs-ᴘc ', hl = theme.tail },
         },
         hl = theme.fill,
       }
