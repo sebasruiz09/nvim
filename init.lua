@@ -1,4 +1,4 @@
-require "config"
+require("sebasruiz.config")
 vim.opt.fillchars = {
   vert = "▕", -- alternatives │
   fold = " ",

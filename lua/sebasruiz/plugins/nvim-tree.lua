@@ -15,7 +15,7 @@ return {
         }
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       }
     })
     vim.g.loader_netrw = 1

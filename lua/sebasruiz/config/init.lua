@@ -1,5 +1,5 @@
-require "config.options"
-require "config.keymaps"
+require "sebasruiz.config.options"
+require "sebasruiz.config.keymaps"
 
 vim.api.nvim_create_autocmd("User", {
   group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
@@ -7,4 +7,4 @@ vim.api.nvim_create_autocmd("User", {
   callback = function()
   end,
 })
-require "config.lazy"
+require "sebasruiz.config.lazy"

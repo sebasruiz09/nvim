@@ -14,13 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "plugins" },
+    { import = "sebasruiz.plugins" },
   },
   checker = { enable = true, notify = false },
   dev = {
     paths = {
-      "~/plugins,",
-      "~/plugins/telescope"
+      "~/sebasruiz/plugins",
     },
     fallback = true,
     patterns = { "sebasruiz" },
