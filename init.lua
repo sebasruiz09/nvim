@@ -10,7 +10,6 @@ vim.opt.fillchars = {
 	foldclose = "▸",
 }
 
-
 vim.cmd("verbose 15")
 vim.g.loaded_perl_provider = 0
 vim.opt.clipboard:append { "unnamedplus" }
