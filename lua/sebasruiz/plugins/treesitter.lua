@@ -1,24 +1,30 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  },
-  build = ':TSUpdate',
-  config = function()
-    require('nvim-treesitter.configs').setup {
-      auto_install = true,
-
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<c-space>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
-        },
-      },
-    }
-  end
+	'nvim-treesitter/nvim-treesitter',
+	dependencies = {
+		'nvim-treesitter/nvim-treesitter-textobjects',
+		'p00f/nvim-ts-rainbow'
+	},
+	build = ':TSUpdate',
+	config = function()
+		require('nvim-treesitter.configs').setup {
+			ensure_install = "all",
+			auto_install = true,
+			highlight = { enable = true, use_languagetree = true, additional_vim_regex_highlighting = true },
+			indent = { enable = true },
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = '<c-space>',
+					node_incremental = '<c-space>',
+					scope_incremental = '<c-s>',
+					node_decremental = '<M-space>',
+				},
+			},
+			rainbow = {
+				enable = true,
+				extended_mode = true,
+				max_file_lines = nil,
+			}
+		}
+	end
 }

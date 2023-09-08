@@ -1,9 +1,9 @@
 require("sebasruiz.config")
 vim.opt.fillchars = {
-	vert = "▕", -- alternatives │
+	vert = "▕",
 	fold = " ",
-	eob = " ", -- suppress ~ at EndOfBuffer
-	diff = "╱", -- alternatives = ⣿ ░ ─
+	eob = " ",
+	diff = "╱",
 	msgsep = "‾",
 	foldopen = "▾",
 	foldsep = "│",
@@ -15,3 +15,5 @@ vim.g.loaded_perl_provider = 0
 vim.opt.clipboard:append { "unnamedplus" }
 
 vim.opt.termguicolors = true
+
+vim.notify = require("notify")
