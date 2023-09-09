@@ -6,17 +6,18 @@ return {
 		{ "nvim-telescope/telescope-fzy-native.nvim" },
 		{ "kyazdani42/nvim-web-devicons" },
 		{ "nvim-telescope/telescope-file-browser.nvim" },
-		{ "nvim-telescope/telescope-ui-select.nvim" }, {
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-		dependencies = {
-			"junegunn/fzf.vim",
+		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
 			dependencies = {
-				{ "tpope/vim-dispatch", cmd = { "Make", "Dispatch" } },
-				{ "junegunn/fzf",       build = ":call fzf#install()" }
+				"junegunn/fzf.vim",
+				dependencies = {
+					{ "tpope/vim-dispatch", cmd = { "Make", "Dispatch" } },
+					{ "junegunn/fzf",       build = ":call fzf#install()" }
+				}
 			}
 		}
-	}
 	},
 	config = function()
 		local sorters = require('telescope.sorters')
@@ -30,7 +31,8 @@ return {
 					n = { ["<C-z>"] = actions.select_vertical }
 				},
 				layout_config = {
-					width = 0.80,
+					width = 0.55,
+					height = 0.65,
 					prompt_position = "top",
 					preview_cutoff = 120,
 

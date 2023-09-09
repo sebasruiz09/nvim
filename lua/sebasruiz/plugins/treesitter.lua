@@ -9,7 +9,11 @@ return {
 		require('nvim-treesitter.configs').setup {
 			ensure_install = "all",
 			auto_install = true,
-			highlight = { enable = true, use_languagetree = true, additional_vim_regex_highlighting = true },
+			highlight = {
+				enable = true,
+				use_languagetree = true,
+				additional_vim_regex_highlighting = true
+			},
 			indent = { enable = true },
 			incremental_selection = {
 				enable = true,
@@ -20,11 +24,6 @@ return {
 					node_decremental = '<M-space>',
 				},
 			},
-			rainbow = {
-				enable = true,
-				extended_mode = true,
-				max_file_lines = nil,
-			}
 		}
 	end
 }

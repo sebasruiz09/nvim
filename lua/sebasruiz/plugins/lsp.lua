@@ -15,6 +15,8 @@ return {
 		servers = {
 			tsserver = {},
 			angularls = {},
+			luals = {},
+			jsonls = {},
 		},
 	},
 }
