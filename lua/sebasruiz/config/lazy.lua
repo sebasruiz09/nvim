@@ -15,7 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{ import = "sebasruiz.plugins" },
-		{ import = "sebasruiz.plugins.start" }
+		{ import = "sebasruiz.plugins.start" },
+		{ import = "sebasruiz.plugins.ui" }
 	},
 	checker = { enable = true, notify = false },
 	dev = {
