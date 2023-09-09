@@ -1,5 +1,6 @@
 return {
 	"shellRaining/hlchunk.nvim",
 	event = { "UIEnter" },
-	config = true
+	config = true,
+	enabled = false,
 }
