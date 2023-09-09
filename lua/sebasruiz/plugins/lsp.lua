@@ -8,15 +8,19 @@ return {
 				automatic_installation = true,
 			}
 		},
-		'folke/neodev.nvim',
-		"simrat39/rust-tools.nvim",
+		{ 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 	},
 	opts = {
 		servers = {
 			tsserver = {},
 			angularls = {},
-			luals = {},
 			jsonls = {},
+			lua_ls = {
+				Lua = {
+					workspace = { checkThirdParty = false },
+					telemetry = { enable = false },
+				},
+			},
 		},
 	},
 }
