@@ -5,9 +5,11 @@ return {
 		'p00f/nvim-ts-rainbow'
 	},
 	build = ':TSUpdate',
+	event = "VeryLazy",
 	config = function()
 		require('nvim-treesitter.configs').setup {
-			ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
+			ensure_installed = { 'lua', 'luadoc', 'python', 'css', 'scss', 'tsx', 'json', 'javascript', 'typescript',
+				'vimdoc', 'vim' },
 			sync_install = false,
 			ignore_install = {},
 			auto_install = true,
@@ -17,6 +19,20 @@ return {
 				additional_vim_regex_highlighting = true
 			},
 			indent = { enable = true },
+			textobjects = {
+				select = {
+					enable = true,
+					loookahead = true,
+					keymaps = {
+						["af"] = "@function.outer",
+						["ai"] = "@function.inner",
+						["ac"] = "@conditional.outer",
+						["ic"] = "@conditional.inner",
+						["al"] = "@loop.outer",
+						["il"] = "@loop.inner",
+					},
+				},
+			},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
