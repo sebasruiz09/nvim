@@ -17,6 +17,3 @@ vim.opt.clipboard:append { "unnamedplus" }
 vim.opt.termguicolors = true
 
 vim.notify = require("notify")
-
-vim.g.loader_netrw = 1
-vim.g.loader_netrwPlugin = 1

@@ -3,7 +3,7 @@ return {
 	config = function()
 		require('mini.indentscope').setup {
 			draw = {
-				delay = 30,
+				delay = 100,
 				priority = 5,
 			},
 			mappings = {
