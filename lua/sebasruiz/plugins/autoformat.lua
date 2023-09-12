@@ -1,10 +1,9 @@
 return {
 	'neovim/nvim-lspconfig',
 	config = function()
-		local format_is_enabled = true
+		local format = true
 		vim.api.nvim_create_user_command('KickstartFormatToggle', function()
-			format_is_enabled = not format_is_enabled
-			print('Setting autoformatting to: ' .. tostring(format_is_enabled))
+			format = not format
 		end, {})
 
 		local _augroups = {}
@@ -33,7 +32,7 @@ return {
 					group = get_augroup(client),
 					buffer = bufnr,
 					callback = function()
-						if not format_is_enabled then
+						if not format then
 							return
 						end
 
