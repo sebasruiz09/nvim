@@ -31,7 +31,7 @@ return {
 					n = { ["<C-z>"] = actions.select_vertical }
 				},
 				layout_config = {
-					width = 0.55,
+					width = 0.65,
 					height = 0.65,
 					prompt_position = "top",
 					preview_cutoff = 120,

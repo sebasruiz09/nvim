@@ -11,7 +11,7 @@ return {
 				adaptive_size = true,
 				centralize_selection = true,
 				width = 40,
-				hide_root_folder = false,
+				--hide_root_folder = false,
 				side = "left",
 				preserve_window_proportions = false,
 				signcolumn = "yes",
@@ -51,7 +51,7 @@ return {
 			},
 			hijack_directories = {
 				enable = true,
-				auto_open = true,
+				auto_open = false,
 			},
 			update_focused_file = {
 				enable = true,

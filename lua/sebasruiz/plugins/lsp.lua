@@ -15,6 +15,8 @@ return {
 			tsserver = {},
 			angularls = {},
 			jsonls = {},
+			css_lsp = {},
+			html_lsp = {},
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },
