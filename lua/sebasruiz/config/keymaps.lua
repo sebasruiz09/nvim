@@ -40,6 +40,9 @@ keymap('n', '<C-t>', ':ToggleTerm<CR>', opts)
 keymap('n', '<leader>l', '<cmd>lua require("spectre").toggle()<CR>', {
 	desc = "Toggle Spectre"
 })
+-- trouble
+keymap('n', '<leader>t', ':Trouble<CR>', opts)
+keymap('n', '<leader>tt', ':TroubleClose<CR>', opts)
 
 keymap('v', '<leader>lw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
 	desc = "Search current word"

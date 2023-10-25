@@ -2,7 +2,7 @@ return {
 	'nvim-treesitter/nvim-treesitter',
 	dependencies = {
 		'nvim-treesitter/nvim-treesitter-textobjects',
-		'p00f/nvim-ts-rainbow'
+		'HiPhish/nvim-ts-rainbow2'
 	},
 	build = ':TSUpdate',
 	event = "VeryLazy",
@@ -12,6 +12,20 @@ return {
 			sync_install = false,
 			ignore_install = {},
 			auto_install = true,
+			rainbow = {
+				enable = true,
+				query = 'rainbow-parens',
+				strategy = require('ts-rainbow').strategy.global,
+				hlgroups = {
+					'TSRainbowRed',
+					'TSRainbowGreen',
+					'TSRainbowBlue',
+					'TSRainbowYellow',
+					'TSRainbowOrange',
+					'TSRainbowViolet',
+					'TSRainbowCyan'
+				},
+			},
 			highlight = {
 				enable = true,
 				use_languagetree = true,
