@@ -1,14 +1,14 @@
 return {
-	'neovim/nvim-lspconfig',
+	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ 'williamboman/mason.nvim', config = true },
+		{ "williamboman/mason.nvim", config = true },
 		{
-			'williamboman/mason-lspconfig.nvim',
+			"williamboman/mason-lspconfig.nvim",
 			opts = {
 				automatic_installation = true,
-			}
+			},
 		},
-		{ 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+		{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 	},
 	opts = {
 		servers = {
@@ -25,4 +25,5 @@ return {
 			},
 		},
 	},
+	config = function() end,
 }
