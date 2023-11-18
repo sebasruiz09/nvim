@@ -14,14 +14,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- lightspeed
-keymap('n', '<leader>s', '<Plug>Lightspeed_s', opts)
-
 -- telescope
-keymap('n', '<C-p>', ':Telescope<CR>', opts)
-keymap('n', '<C-b>', ':Telescope file_browser<CR>', opts)
-keymap('n', '<leader>e', ':Telescope file_browser path=%:p:h select_buffer=true<CR>",', opts)
-keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
+keymap("n", "<C-p>", ":Telescope<CR>", opts)
+keymap("n", "<C-b>", ":Telescope file_browser<CR>", opts)
+keymap("n", "<leader>e", ':Telescope file_browser path=%:p:h select_buffer=true<CR>",', opts)
+keymap("n", "<C-f>", ":Telescope find_files<CR>", opts)
 
 -- terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -30,26 +27,25 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
-keymap('n', 'nv', ':Navbuddy<CR>', opts)
-
+keymap("n", "nv", ":Navbuddy<CR>", opts)
 
 --toggle terms
-keymap('n', '<C-t>', ':ToggleTerm<CR>', opts)
+keymap("n", "<C-t>", ":ToggleTerm<CR>", opts)
 
 -- spectre
-keymap('n', '<leader>l', '<cmd>lua require("spectre").toggle()<CR>', {
-	desc = "Toggle Spectre"
+keymap("n", "<leader>l", '<cmd>lua require("spectre").toggle()<CR>', {
+	desc = "Toggle Spectre",
 })
 -- trouble
-keymap('n', '<leader>t', ':Trouble<CR>', opts)
-keymap('n', '<leader>tt', ':TroubleClose<CR>', opts)
+keymap("n", "<leader>t", ":Trouble<CR>", opts)
+keymap("n", "<leader>tt", ":TroubleClose<CR>", opts)
 
-keymap('v', '<leader>lw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-	desc = "Search current word"
+keymap("v", "<leader>lw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+	desc = "Search current word",
 })
 
-keymap('n', '<leader>ll', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-	desc = "Search on current file"
+keymap("n", "<leader>ll", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+	desc = "Search on current file",
 })
 
 --resize windows
@@ -59,8 +55,9 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- nvimTree
-keymap("n", "<leader>b", ':NvimTreeOpen<CR>', opts)
-keymap("n", "<leader>bb", ':NvimTreeClose<CR>', opts)
+keymap("n", "<leader>b", ":NvimTreeOpen<CR>", opts)
+keymap("n", "<leader>bb", ":NvimTreeClose<CR>", opts)
 
 --buffers navigation
-keymap("n", "gt", ":TablineBufferNext<CR>", opts)
+keymap("n", "gt", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "tg", ":BufferLineCyclePrev<CR>", opts)

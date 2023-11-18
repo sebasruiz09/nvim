@@ -12,6 +12,7 @@ vim.opt.fillchars = {
 
 vim.cmd("verbose 15")
 vim.g.loaded_perl_provider = 0
+
 vim.opt.clipboard:append({ "unnamedplus" })
 
 vim.opt.termguicolors = true
@@ -24,3 +25,5 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     vim.api.nvim_exec('silent! normal! g`"zv', false)
   end,
 })
+
+
