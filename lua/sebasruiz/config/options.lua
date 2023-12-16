@@ -28,12 +28,12 @@ local options = {
   number = true,
   numberwidth = 2,
   relativenumber = true,
-  signcolumn = yes,
+  signcolumn = "yes",
   scrolloff = 8,
   sidescrolloff = 8,
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
   vim.opt[k] = v

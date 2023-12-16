@@ -25,8 +25,19 @@ return {
         lualine_a = { "mode" },
         lualine_b = {},
         lualine_c = { "branch", "diff", "diagnostics" },
-        lualine_x = { "filename", "filetype", "fileformat", "progress" },
-        lualine_y = {},
+        lualine_x = {
+          "filename",
+          "filetype",
+          "fileformat",
+          "progress",
+        },
+        lualine_y = {
+          {
+            require("lazy.status").updates,
+            cond = require("lazy.status").has_updates,
+            color = { fg = "#ff9e64" },
+          },
+        },
         lualine_z = {},
       },
       inactive_sections = {
