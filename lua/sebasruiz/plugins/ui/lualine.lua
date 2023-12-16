@@ -1,3 +1,7 @@
+local function vimIcon()
+  return " "
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   lazy = false,
@@ -23,7 +27,7 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = {},
+        lualine_b = { vimIcon },
         lualine_c = { "branch", "diff", "diagnostics" },
         lualine_x = {
           "filename",

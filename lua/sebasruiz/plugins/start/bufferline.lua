@@ -4,7 +4,7 @@ return {
   config = function()
     require("bufferline").setup({
       options = {
-        --separator_style = "slope",
+        separator_style = "slope",
         move_wraps_at_ends = true,
         show_tab_indicator = true,
         show_close_icon = false,
@@ -12,6 +12,7 @@ return {
         diagnostics = "nvim_lsp",
         color_icons = true,
         buffer_close_icon = "",
+        tab_size = 3,
       },
     })
   end,
