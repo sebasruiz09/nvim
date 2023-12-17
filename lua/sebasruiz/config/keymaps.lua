@@ -1,9 +1,7 @@
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
--- leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -45,7 +43,14 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
+-- tabby
+vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gt", ":tabn<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tg", ":tabp<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+
 --buffers navigation
-keymap("n", "gt", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "tg", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>bd", ":bd!<CR>", opts)
