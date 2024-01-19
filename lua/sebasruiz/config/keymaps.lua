@@ -54,3 +54,5 @@ vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
 
 --buffers navigation
 keymap("n", "<leader>bd", ":bd!<CR>", opts)
+
+keymap("t", "<C-Del>", "<C-\\><C-n>", opts)
