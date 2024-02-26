@@ -52,6 +52,11 @@ vim.api.nvim_set_keymap("n", "<leader>tg", ":tabp<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
 
+keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
+
+-- term exit
+vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n>", { noremap = true })
+
 --buffers navigation
 keymap("n", "<leader>bd", ":bd!<CR>", opts)
 
