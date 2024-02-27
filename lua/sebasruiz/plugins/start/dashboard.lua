@@ -3,7 +3,7 @@ return {
   event = "VimEnter",
   opts = function()
     local logo = [[
-███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ 
 ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
 ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
 ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
@@ -23,6 +23,7 @@ return {
         header = vim.split(logo, "\n"),
 				-- stylua: ignore
 				center = {
+					{ action = "Telescope project", desc = " Select Project", icon = " ", key = "p" },
 					{ action = "Telescope find_files", desc = " Find file", icon = " ", key = "f" },
 					{ action = "ene | startinsert", desc = " New file", icon = " ", key = "n" },
 					{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
@@ -35,6 +36,7 @@ return {
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
           return {
+            "",
             "󱑶  Free software is like sex, it's better when it's free",
             "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms",
           }

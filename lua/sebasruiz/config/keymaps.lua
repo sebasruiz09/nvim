@@ -44,18 +44,20 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- tabby
-vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>gt", ":tabn<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tg", ":tabp<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+keymap("n", "<leader>ta", ":$tabnew<CR>", opts)
+keymap("n", "<leader>tc", ":tabclose<CR>", opts)
+keymap("n", "<leader>to", ":tabonly<CR>", opts)
+keymap("n", "<leader>gt", ":tabn<CR>", opts)
+keymap("n", "<leader>tg", ":tabp<CR>", opts)
+keymap("n", "<leader>tmp", ":-tabmove<CR>", opts)
+keymap("n", "<leader>tmn", ":+tabmove<CR>", opts)
 
 keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
 
+keymap("n", "<leader>p", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
+
 -- term exit
-vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n>", { noremap = true })
+keymap("t", "<C-l>", "<C-\\><C-n>", opts)
 
 --buffers navigation
 keymap("n", "<leader>bd", ":bd!<CR>", opts)

@@ -7,6 +7,7 @@ return {
     { "kyazdani42/nvim-web-devicons" },
     { "nvim-telescope/telescope-file-browser.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" },
+    { "nvim-telescope/telescope-project.nvim" },
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -25,6 +26,7 @@ return {
 
     require("telescope").load_extension("file_browser")
     require("telescope").load_extension("notify")
+    require("telescope").load_extension("project")
 
     require("telescope").setup({
       defaults = {
@@ -32,13 +34,22 @@ return {
           i = { ["<C-z>"] = actions.select_vertical },
           n = { ["<C-z>"] = actions.select_vertical },
         },
+        border = true,
+        borderchars = { " ", "", " ", " ", " ", " ", " ", " " },
+        sorting_strategy = "ascending",
+        layout_strategy = "horizontal",
+        path_display = { "smart" },
         layout_config = {
-          width = 0.65,
-          height = 0.65,
-          prompt_position = "top",
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.57,
+          },
+          vertical = {
+            mirror = false,
+          },
+          width = 0.60,
+          height = 0.70,
           preview_cutoff = 120,
-
-          vertical = { mirror = false },
         },
         find_command = {
           "rg",
@@ -51,10 +62,9 @@ return {
         prompt_prefix = "   ",
         selection_caret = " ",
         entry_prefix = "  ",
+        color_devicons = true,
         initial_mode = "insert",
         selection_strategy = "reset",
-        sorting_strategy = "descending",
-        layout_strategy = "horizontal",
         file_sorter = sorters.get_fuzzy_file,
         file_ignore_patterns = {
           "node_modules/*",
