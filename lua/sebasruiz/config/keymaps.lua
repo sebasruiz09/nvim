@@ -21,7 +21,7 @@ keymap("n", "<leader>l", '<cmd>lua require("spectre").toggle()<CR>', {
   desc = "Toggle Spectre",
 })
 
-keymap("n", "<leader>e", ":Oil<CR>", {
+keymap("n", "<leader>e", ":Oil --float<CR>", {
   desc = "Oil explorer",
 })
 

@@ -29,7 +29,7 @@ return {
 					{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
 					{ action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },
 					{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
-					{ action = "Oil", desc = " Oil", icon = "󰐅 ", key = "o" },
+					{ action = "Oil --float", desc = " Oil", icon = "󰐅 ", key = "o" },
 					{ action = "qa", desc = " Quit", icon = " ", key = "q" },
 				},
         footer = function()
