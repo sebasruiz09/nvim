@@ -9,12 +9,13 @@ vim.g.maplocalleader = " "
 -- telescope
 keymap("n", "<C-p>", ":Telescope<CR>", opts)
 keymap("n", "<C-b>", ":Telescope file_browser<CR>", opts)
-keymap("n", "<C-e>", ':Telescope file_browser path=%:p:h select_buffer=true<CR>",', opts)
 keymap("n", "<C-f>", ":Telescope find_files<CR>", opts)
 
-keymap("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+keymap("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 
 keymap("n", "nv", ":Navbuddy<CR>", opts)
+
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
 -- spectre
 keymap("n", "<leader>l", '<cmd>lua require("spectre").toggle()<CR>', {

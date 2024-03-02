@@ -33,5 +33,5 @@ return {
       })
     end, { desc = "format file or range (in visual mode)" })
   end,
-  enabled = false,
+  enabled = true,
 }
