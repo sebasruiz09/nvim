@@ -42,7 +42,7 @@ return {
     cmp.setup({
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body)
+          require("sebasruiz.plugins.snippets.luasnip").lsp_expand(args.body)
         end,
       },
       window = {

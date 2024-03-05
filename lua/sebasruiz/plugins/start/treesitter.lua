@@ -8,7 +8,19 @@ return {
   event = "VeryLazy",
   config = function()
     require("nvim-treesitter.configs").setup({
-      ensure_installed = { "lua", "luadoc", "python", "vim", "css", "scss", "json", "javascript", "typescript", "dart" },
+      ensure_installed = {
+        "lua",
+        "luadoc",
+        "python",
+        "rust",
+        "vim",
+        "css",
+        "scss",
+        "json",
+        "javascript",
+        "typescript",
+        "dart",
+      },
       sync_install = false,
       ignore_install = {},
       auto_install = true,
