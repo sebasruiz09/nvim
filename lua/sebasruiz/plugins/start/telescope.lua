@@ -7,7 +7,6 @@ return {
     { "kyazdani42/nvim-web-devicons" },
     { "nvim-telescope/telescope-file-browser.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" },
-    { "nvim-telescope/telescope-project.nvim" },
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -26,7 +25,6 @@ return {
 
     require("telescope").load_extension("file_browser")
     require("telescope").load_extension("notify")
-    require("telescope").load_extension("project")
 
     require("telescope").setup({
       defaults = {

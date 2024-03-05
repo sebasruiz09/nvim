@@ -55,8 +55,6 @@ keymap("n", "<leader>tmn", ":+tabmove<CR>", opts)
 
 keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
 
-keymap("n", "<leader>p", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
-
 -- term exit
 keymap("t", "<C-l>", "<C-\\><C-n>", opts)
 
