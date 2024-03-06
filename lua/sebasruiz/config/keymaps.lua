@@ -30,14 +30,6 @@ keymap("n", "<leader>e", ":Oil --float<CR>", {
 keymap("n", "<leader>t", ":Trouble<CR>", opts)
 keymap("n", "<leader>tt", ":TroubleClose<CR>", opts)
 
-keymap("v", "<leader>lw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-  desc = "Search current word",
-})
-
-keymap("n", "<leader>ll", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-  desc = "Search on current file",
-})
-
 --resize windows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)

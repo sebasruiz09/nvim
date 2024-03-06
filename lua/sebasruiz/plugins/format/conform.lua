@@ -1,6 +1,16 @@
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  keys = {
+    {
+      "<leader>cF",
+      function()
+        require("conform").format()
+      end,
+      mode = { "n", "v" },
+      desc = "Format Langs",
+    },
+  },
   config = function()
     local conform = require("conform")
     conform.setup({
@@ -16,6 +26,8 @@ return {
         graphql = { "prettier" },
         lua = { "stylua" },
         python = { "isort", "black" },
+        sh = { "shfmt" },
+        bash = { "shfmt" },
       },
 
       format_on_save = {
