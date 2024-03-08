@@ -9,6 +9,51 @@ local theme = {
 
 return {
   "nanozuki/tabby.nvim",
+  event = { "BufReadPre" },
+  keys = {
+    {
+      "<leader>ta",
+      "<cmd>$tabnew<cr>",
+      mode = { "n" },
+      desc = { "new tab" },
+    },
+    {
+      "<leader>tc",
+      "<cmd>tabclose<cr>",
+      mode = { "n" },
+      desc = { "close tab" },
+    },
+    {
+      "<leader>to",
+      "<cmd>tabonly<cr>",
+      mode = { "n" },
+      desc = { "tab only" },
+    },
+    {
+      "<leader>gt",
+      "<cmd>tabn<cr>",
+      mode = { "n" },
+      desc = { "next tab" },
+    },
+    {
+      "<leader>tg",
+      "<cmd>tabp<cr>",
+      mode = { "n" },
+      desc = { "previus tab" },
+    },
+    {
+      "<leader>tmp",
+      "<cmd>-tabmove<cr>",
+      mode = { "n" },
+      desc = { "tab move -1" },
+    },
+    {
+      "<leader>tmn",
+      "<cmd>+tabmove<cr>",
+      mode = { "n" },
+      desc = { "tab move +1" },
+    },
+  },
   config = function()
     require("tabby.tabline").set(function(line)
       return {

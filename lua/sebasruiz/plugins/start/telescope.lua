@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  event = "VimEnter",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-lua/popup.nvim" },
@@ -18,6 +19,11 @@ return {
         },
       },
     },
+  },
+  keys = {
+    { "<C-p>", "<cmd>Telescope<cr>", mode = { "n" }, desc = "Telescope menu" },
+    { "<C-b>", "<cmd>Telescope file_browser<cr>", mode = { "n" }, desc = "Telescope file browser" },
+    { "<C-f>", "<cmd>Telescope find_files<cr>", mode = { "n" }, desc = "Telescope find files" },
   },
   config = function()
     local sorters = require("telescope.sorters")

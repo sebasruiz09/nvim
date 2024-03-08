@@ -1,5 +1,9 @@
 return {
   "stevearc/oil.nvim",
+  event = "VimEnter",
+  keys = {
+    { "<leader>e", "<cmd>Oil --float<cr>", mode = { "n" }, desc = "File explorer" },
+  },
   opts = {
     default_file_exporer = true,
     view_options = {
