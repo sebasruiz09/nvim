@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  event = "VeryLazy",
   keys = { {
     "nv",
     "<cmd>Navbuddy<cr>",

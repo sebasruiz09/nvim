@@ -28,6 +28,7 @@ local icons = {
 
 return {
   "hrsh7th/nvim-cmp",
+  event = "insertEnter",
   dependencies = {
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",

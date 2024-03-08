@@ -1,5 +1,6 @@
 return {
   "folke/trouble.nvim",
+  event = "VeryLazy",
   keys = {
     { "<leader>t", "<cmd>Trouble<cr>", mode = { "n" }, desc = "Open trouble" },
     {
