@@ -4,6 +4,9 @@ end
 
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = {
+    "EdenEast/nightfox.nvim",
+  },
   lazy = false,
   config = function()
     require("lualine").setup({

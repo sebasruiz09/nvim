@@ -40,6 +40,8 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local lspkind = require("lspkind")
+    local compare = cmp.config.compare
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -70,12 +72,21 @@ return {
         } }
       ),
       formatting = {
-        fields = { "abbr", "kind" },
-        format = function(entry, vim_item)
-          vim_item.kind = icons[vim_item.kind] .. vim_item.kind
-
-          return vim_item
-        end,
+        format = lspkind.cmp_format({
+          maxwidth = 55,
+          ellipsis_char = "...",
+          before = function(entry, vim_item)
+            vim_item.kind = icons[vim_item.kind] .. " " .. vim_item.kind
+            return vim_item
+          end,
+        }),
+      },
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          compare.kind,
+          compare.sort_text,
+        },
       },
     })
     cmp.setup.filetype("gitcommit", {
@@ -100,23 +111,6 @@ return {
       } }, { {
         name = "cmdline",
       } }),
-    })
-
-    local devicons = require("nvim-web-devicons")
-    cmp.register_source("devicons", {
-      complete = function(_, _, callback)
-        local items = {}
-        for _, icon in pairs(devicons.get_icons()) do
-          table.insert(items, {
-            label = icon.icon .. "  " .. icon.name,
-            insertText = icon.icon,
-            filterText = icon.name,
-          })
-        end
-        callback({
-          items = items,
-        })
-      end,
     })
 
     local lspconfig = require("lspconfig")
