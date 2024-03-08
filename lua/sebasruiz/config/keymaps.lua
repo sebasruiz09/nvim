@@ -16,3 +16,6 @@ keymap("t", "<C-l>", "<C-\\><C-n>", opts)
 keymap("n", "<leader>bd", ":bd!<CR>", opts)
 
 keymap("t", "<C-Del>", "<C-\\><C-n>", opts)
+
+keymap("n", "<leader>vn", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Goes to next diagnostic error" })
+keymap("n", "<leader>vp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Goes to prev diagnostic error" })
