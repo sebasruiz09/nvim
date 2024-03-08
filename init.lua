@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 require("sebasruiz.config")
 vim.opt.fillchars = {
   vert = "▕",

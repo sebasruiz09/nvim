@@ -73,7 +73,9 @@ return {
       ),
       formatting = {
         format = lspkind.cmp_format({
-          maxwidth = 55,
+          maxwidth = function()
+            return math.floor(0.40 * vim.o.columns)
+          end,
           ellipsis_char = "...",
           before = function(entry, vim_item)
             vim_item.kind = icons[vim_item.kind] .. " " .. vim_item.kind

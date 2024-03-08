@@ -64,7 +64,7 @@ return {
           "--smart-case",
         },
         prompt_prefix = "   ",
-        selection_caret = " ",
+        selection_caret = "   ",
         entry_prefix = "  ",
         color_devicons = true,
         initial_mode = "insert",

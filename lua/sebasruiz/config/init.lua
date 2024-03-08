@@ -1,10 +1,11 @@
-require "sebasruiz.config.options"
-require "sebasruiz.config.keymaps"
+require("sebasruiz.config.options")
 
 vim.api.nvim_create_autocmd("User", {
-	group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
-	pattern = "VeryLazy",
-	callback = function()
-	end
+  group = vim.api.nvim_create_augroup("LazyVim", { clear = true }),
+  pattern = "VeryLazy",
+  callback = function()
+    require("sebasruiz.config.diagnostics")
+    require("sebasruiz.config.keymaps")
+  end,
 })
-require "sebasruiz.config.lazy"
+require("sebasruiz.config.lazy")
