@@ -11,7 +11,8 @@ return {
   dependencies = {
     "EdenEast/nightfox.nvim",
   },
-  lazy = false,
+  lazy = true,
+  event = "InsertEnter",
   config = function()
     require("lualine").setup({
       options = {

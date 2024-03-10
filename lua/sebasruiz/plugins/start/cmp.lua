@@ -38,39 +38,12 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
   },
+
   config = function()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
     local compare = cmp.config.compare
     cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      },
-      window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-      },
-      mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({
-          select = true,
-        }),
-      }),
-      sources = cmp.config.sources(
-        { {
-          name = "nvim_lsp",
-        }, {
-          name = "luasnip",
-        } },
-        { {
-          name = "buffer",
-        } }
-      ),
       formatting = {
         format = lspkind.cmp_format({
           maxwidth = function()
@@ -83,12 +56,45 @@ return {
           end,
         }),
       },
+
+      mapping = cmp.mapping.preset.insert({
+        ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<CR>"] = cmp.mapping.confirm({
+          select = true,
+        }),
+      }),
+
+      snippet = {
+        expand = function(args)
+          require("luasnip").lsp_expand(args.body)
+        end,
+      },
+
       sorting = {
         priority_weight = 2,
         comparators = {
           compare.kind,
           compare.sort_text,
         },
+      },
+
+      sources = cmp.config.sources({
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
+      }),
+
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
     })
     cmp.setup.filetype("gitcommit", {

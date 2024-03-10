@@ -36,7 +36,10 @@ return {
       defaults = {
         mappings = {
           i = { ["<C-z>"] = actions.select_vertical },
-          n = { ["<C-z>"] = actions.select_vertical },
+          n = {
+            ["<C-z>"] = actions.select_vertical,
+            ["q"] = require("telescope.actions").close,
+          },
         },
         border = true,
         borderchars = { " ", "", " ", " ", " ", " ", " ", " " },
