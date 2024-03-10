@@ -1,6 +1,10 @@
-local function vimIcon()
-  return " "
-end
+local icons = {
+  git = {
+    added = " ",
+    modified = " ",
+    removed = "󰆴 ",
+  },
+}
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -16,8 +20,7 @@ return {
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = " " },
         disabled_filetypes = {
-          statusline = {},
-          winbar = {},
+          statusline = { "dashboard" },
         },
         ignore_focus = {},
         always_divide_middle = true,
@@ -30,35 +33,67 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { vimIcon },
-        lualine_c = { "branch", "diff", "diagnostics" },
+        lualine_b = {
+          function()
+            return " "
+          end,
+        },
+        lualine_c = {
+          "branch",
+          "diagnostics",
+        },
         lualine_x = {
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
+          {
+            function()
+              return require("noice").api.status.command.get()
+            end,
+            cond = function()
+              return package.loaded["noice"] and require("noice").api.status.command.has()
+            end,
+          },
           "filename",
           "filetype",
           "fileformat",
-          "progress",
         },
         lualine_y = {
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = { fg = "#ff9e64" },
-          },
+          { "progress", separator = " ", padding = { left = 1, right = 1 } },
         },
-        lualine_z = {},
+        lualine_z = {
+          { "location", separator = " ", padding = { left = 0, right = 1 } },
+        },
       },
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { "filename" },
-        lualine_x = { "location" },
+        lualine_x = {
+          "location",
+        },
         lualine_y = {},
-        lualine_z = {},
+        lualine_z = { "progress" },
       },
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {},
+      extensions = { "lazy" },
     })
   end,
 }
