@@ -51,7 +51,8 @@ return {
           end,
           ellipsis_char = "...",
           before = function(entry, vim_item)
-            vim_item.kind = icons[vim_item.kind] .. " " .. vim_item.kind
+            vim_item.abbr = icons[vim_item.kind] .. " " .. vim_item.abbr
+            vim_item.kind = vim_item.kind
             return vim_item
           end,
         }),
