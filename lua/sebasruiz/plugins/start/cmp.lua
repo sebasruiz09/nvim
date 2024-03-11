@@ -13,7 +13,7 @@ local icons = {
   Value = " ",
   Enum = " ",
   Keyword = "  ",
-  Snippet = "  ",
+  Snippet = "  ",
   Color = " ",
   File = " ",
   Reference = " ",
@@ -28,7 +28,7 @@ local icons = {
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "insertEnter",
+  event = "VimEnter",
   dependencies = {
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
@@ -52,7 +52,7 @@ return {
           ellipsis_char = "...",
           before = function(entry, vim_item)
             vim_item.abbr = icons[vim_item.kind] .. " " .. vim_item.abbr
-            vim_item.kind = vim_item.kind
+            vim_item.kind = " " .. vim_item.kind
             return vim_item
           end,
         }),
