@@ -77,7 +77,7 @@ return {
         file_ignore_patterns = {
           "node_modules/*",
           ".angular/*",
-          ".git",
+          ".git/",
           ".vscode/*",
         },
       },
