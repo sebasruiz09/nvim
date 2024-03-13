@@ -9,6 +9,11 @@ return {
     view_options = {
       show_hidden = true,
     },
+		columns = {
+        "icon",
+				 --"mtime",
+				 --"size",
+      },
     float = {
       padding = 2,
       max_width = 155,

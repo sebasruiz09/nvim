@@ -9,7 +9,7 @@ local theme = {
 
 return {
   "nanozuki/tabby.nvim",
-  event = { "BufReadPre" },
+  event = { "BufReadPre", "VimEnter" },
   keys = {
     {
       "<leader>ta",
