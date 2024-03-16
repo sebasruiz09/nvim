@@ -11,12 +11,17 @@ return {
     { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
   },
   opts = {
+    ensure_installed = { "lua_ls", "tsserver", "angularls", "jsonls", "html", "css_ls" },
+    automatic_installation = true,
     servers = {
       tsserver = {},
       angularls = {},
       jsonls = {},
-      html_lsp = {},
-      css_lsp = {},
+      jq = {},
+      html = {},
+      bashls = {},
+      cssls = {},
+      cssmodules_ls = {},
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },

@@ -5,7 +5,7 @@ return {
   },
   event = "VimEnter",
   keys = {
-    { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", mode = { "n" }, desc = "preview git hunk" },
+    { "<leader>gh", "<cmd>Gitsigns preview_hunk<cr>", mode = { "n" }, desc = "preview git hunk" },
     {
       "<leader>gs",
       "<cmd>Gvdiffsplit<cr>",
@@ -19,7 +19,7 @@ return {
       desc = "Git panel",
     },
 		{
-			"<leader>gpp",
+			"<leader>gp",
 			"<cmd>Git push<cr>",
 			mode = { "n"},
 			desc = "Git push"

@@ -8,8 +8,8 @@ return {
 
     local opts = {
       border = "rounded",
-      title = "Harpoon",
-      ui_max_width = 60,
+      title = "",
+      ui_max_width = 65,
     }
 
     vim.keymap.set("n", "<leader>a", function()
