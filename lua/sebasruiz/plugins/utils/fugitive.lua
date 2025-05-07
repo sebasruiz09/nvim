@@ -18,12 +18,12 @@ return {
       mode = { "n", "v" },
       desc = "Git panel",
     },
-		{
-			"<leader>gp",
-			"<cmd>Git push<cr>",
-			mode = { "n"},
-			desc = "Git push"
-		}
+    {
+      "<leader>gp",
+      "<cmd>Git push<cr>",
+      mode = { "n" },
+      desc = "Git push",
+    },
   },
   config = function()
     require("gitsigns").setup()

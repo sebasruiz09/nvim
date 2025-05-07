@@ -15,5 +15,6 @@ keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 keymap("t", "<C-l>", "<C-\\><C-n>", opts)
 
 keymap("n", "<leader>bd", ":bd!<CR>", opts)
+keymap("n", "<leader>bb", ":Buffers<CR>", opts)
 
 keymap("t", "<C-Del>", "<C-\\><C-n>", opts)
