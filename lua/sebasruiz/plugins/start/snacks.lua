@@ -12,5 +12,44 @@ return {
         max_height = 40,
       },
     },
+
+    bigfile = { enabled = true },
+
+    picker = { enabled = true, title = "Files Finder", cwd = true },
+    quickfile = {
+      enabled = true,
+    },
+  },
+
+  keys = {
+    {
+      "<leader><space>",
+      function()
+        Snacks.picker.files()
+      end,
+      desc = "Smart Find Files",
+    },
+    {
+      "<leader>,",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Buffers",
+    },
+
+    {
+      "<leader>:",
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = "Command History",
+    },
+    {
+      "<leader>n",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "Notification History",
+    },
   },
 }
