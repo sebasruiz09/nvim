@@ -6,14 +6,6 @@ return {
   },
   keys = {
     {
-      "<leader>lw",
-      function()
-        require("spectre").open_visual()
-      end,
-      mode = { "n" },
-      desc = "Search current word",
-    },
-    {
       "<leader>ll",
       function()
         require("spectre").open_visual()
