@@ -94,6 +94,24 @@ return {
               return package.loaded["noice"] and require("noice").api.status.command.has()
             end,
           },
+          {
+            function()
+              local file = vim.fn.expand("%:p")
+              if file == "" or vim.fn.getfsize(file) < 0 then
+                return ""
+              end
+
+              local size = vim.fn.getfsize(file)
+
+              if size < 1024 then
+                return size .. " B"
+              elseif size < 1024 * 1024 then
+                return string.format("%.1f Kb", size / 1024)
+              else
+                return string.format("%.1f Mb", size / (1024 * 1024))
+              end
+            end,
+          },
           "filename",
           "filetype",
           "fileformat",

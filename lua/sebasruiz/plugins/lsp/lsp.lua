@@ -79,7 +79,26 @@ return {
     servers = {
       tsserver = {},
       angularls = {
-        filetypes = { "typescript", "html", "htmlangular" },
+        cmd = {
+          "ngserver",
+          "--stdio",
+          "--tsProbeLocations",
+          "",
+          "--ngProbeLocations",
+          "",
+        },
+        on_new_config = function(new_config, _)
+          new_config.cmd = {
+            "ngserver",
+            "--stdio",
+            "--tsProbeLocations",
+            "",
+            "--ngProbeLocations",
+            "",
+          }
+        end,
+        root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
+        filetypes = { "typescript", "html" },
       },
       jsonls = {},
       pyright = {

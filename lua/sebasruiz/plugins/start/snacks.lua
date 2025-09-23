@@ -3,7 +3,7 @@ return {
   opts = {
     image = {
       enabled = true,
-      formats = { "png", "jpg", "jpeg", "webp", "gif", "bmp", "tiff", "ico", "svg" },
+      formats = { "png", "jpg", "jpeg", "webp", "gif", "bmp", "tiff", "ico" },
       doc = {
         enabled = true,
         inline = true,
@@ -154,4 +154,5 @@ return {
       desc = "which_key_ignore",
     },
   },
+  enabled = true,
 }

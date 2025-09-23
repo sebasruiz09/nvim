@@ -28,7 +28,7 @@ local icons = {
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "VimEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
@@ -37,24 +37,63 @@ return {
     "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
+    { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
   },
 
   config = function()
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
+    local types = require("cmp.types")
+    local tailwind_formatter = require("tailwindcss-colorizer-cmp").formatter
+    local PAD = " "
+
+    vim.api.nvim_create_autocmd({ "BufEnter", "InsertEnter" }, {
+      callback = function()
+        pcall(function()
+          require("cmp").setup.buffer({ enabled = true })
+        end)
+      end,
+    })
+
+    vim.api.nvim_create_user_command("CmpToggle", function()
+      local ok, state = pcall(function()
+        return require("cmp.config").get().enabled
+      end)
+      local enabled = true
+      if ok then
+        if type(state) == "function" then
+          enabled = state()
+        else
+          enabled = state
+        end
+      end
+      require("cmp").setup.buffer({ enabled = not enabled })
+      print("cmp " .. (not enabled and "ENABLED" or "DISABLED") .. " for this buffer")
+    end, {})
+
     cmp.setup({
+      completion = {
+        autocomplete = {
+          types.cmp.TriggerEvent.TextChanged,
+          types.cmp.TriggerEvent.InsertEnter,
+        },
+      },
+
       formatting = {
-        format = lspkind.cmp_format({
-          maxwidth = function()
-            return math.floor(0.40 * vim.o.columns)
-          end,
-          ellipsis_char = "...",
-          before = function(entry, vim_item)
-            vim_item.abbr = icons[vim_item.kind] .. " " .. vim_item.abbr
-            vim_item.kind = " " .. vim_item.kind
-            return vim_item
-          end,
-        }),
+        format = function(entry, vim_item)
+          local kind = vim_item.kind
+          local icon = icons[kind] or ""
+          vim_item.kind = " " .. icon .. " "
+          vim_item = tailwind_formatter(entry, vim_item)
+          if vim_item.kind_hl_group and kind == "Color" then
+            vim_item.kind = " ● "
+          end
+          vim_item.abbr = PAD .. vim_item.abbr .. PAD
+          if vim_item.menu and vim_item.menu ~= "" then
+            vim_item.menu = PAD .. vim_item.menu .. PAD
+          end
+          return vim_item
+        end,
+        fields = { "kind", "abbr", "menu" },
       },
 
       mapping = cmp.mapping.preset.insert({
@@ -66,9 +105,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({
-          select = true,
-        }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
 
       snippet = {
@@ -91,9 +128,7 @@ return {
         },
       },
 
-      experimental = {
-        ghost_text = false,
-      },
+      experimental = { ghost_text = false },
 
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
@@ -103,46 +138,36 @@ return {
       }),
 
       window = {
-        completion = cmp.config.window.bordered({ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" } }),
-
+        completion = cmp.config.window.bordered({
+          border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+        }),
         documentation = cmp.config.window.bordered({
           border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
         }),
       },
+
+      enabled = function()
+        if vim.bo.buftype == "prompt" or vim.bo.buftype == "terminal" then
+          return false
+        end
+        return true
+      end,
     })
+
     cmp.setup.filetype("gitcommit", {
-      sources = cmp.config.sources({ {
-        name = "cmp_git",
-      } }, { {
-        name = "buffer",
-      } }),
+      sources = cmp.config.sources({ { name = "cmp_git" } }, { { name = "buffer" } }),
     })
 
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
-      sources = { {
-        name = "buffer",
-      } },
+      sources = { { name = "buffer" } },
     })
 
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({ {
-        name = "path",
-      } }, { {
-        name = "cmdline",
-      } }),
+      sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
     })
 
-    local lspconfig = require("lspconfig")
-    local servers = require("mason-lspconfig").get_installed_servers()
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-    for _, server in pairs(servers) do
-      lspconfig[server].setup({
-        capabilities = capabilities,
-      })
-    end
     vim.o.completeopt = "menu,menuone,noselect"
   end,
 }
