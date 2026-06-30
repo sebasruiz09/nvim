@@ -14,6 +14,7 @@ return {
         "python",
         "yaml",
         "rust",
+        "c_sharp",
         "vim",
         "css",
         "scss",

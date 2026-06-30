@@ -74,9 +74,10 @@ return {
   },
 
   opts = {
-    ensure_installed = { "lua_ls", "tsserver", "angularls", "jsonls", "html", "css_ls", "pyright" },
+    ensure_installed = { "lua_ls", "tsserver", "angularls", "jsonls", "html", "css_ls", "pyright", "omnisharp" },
     automatic_installation = true,
     servers = {
+      omnisharp = {},
       tsserver = {},
       angularls = {
         cmd = {
