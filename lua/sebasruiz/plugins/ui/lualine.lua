@@ -13,11 +13,11 @@ return {
   },
   lazy = true,
   event = "InsertEnter",
+  theme = "auto",
   config = function()
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "nightfox",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = " " },
         disabled_filetypes = {

@@ -33,11 +33,18 @@ return {
 				},
         footer = function()
           local stats = require("lazy").stats()
-          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+          local version = vim.version()
+          local os = vim.uv.os_uname()
+
+          local files = #vim.fn.globpath(vim.fn.stdpath("config"), "**/*.lua", false, true)
           return {
             "",
-            "󱑶  Free software is like sex, it's better when it's free",
+            "",
+            "󱑶 Free software is like sex, it's better when it's free",
             "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms",
+            string.format("󰌽 %s %s", os.sysname, os.release),
+            string.format("  Neovim %d.%d.%d", version.major, version.minor, version.patch),
           }
         end,
       },

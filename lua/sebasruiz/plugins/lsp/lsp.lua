@@ -21,24 +21,6 @@ return {
       desc = "Lsp code actions",
     },
     {
-      "<leader>vn",
-      "<cmd>lua vim.diagnostic.goto_next()<CR>",
-      mode = {
-        "n",
-        "v",
-      },
-      desc = "Goes to next diagnostic",
-    },
-    {
-      "<leader>vp",
-      "<cmd>lua vim.diagnostic.goto_prev()<CR>",
-      mode = {
-        "n",
-        "v",
-      },
-      desc = "Goes to prev diagnostic",
-    },
-    {
       "gd",
       "<cmd>lua vim.lsp.buf.definition()<CR>",
       mode = {

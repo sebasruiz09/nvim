@@ -56,4 +56,32 @@ return {
       },
     },
   },
+  keys = {
+    {
+      "<leader>na",
+      "<cmd>Noice all<CR>",
+      mode = {
+        "n",
+      },
+      desc = "Show all Noice messages",
+    },
+
+    {
+      "<leader>nh",
+      "<cmd>Noice history<CR>",
+      mode = {
+        "n",
+      },
+      desc = "Show all Noice messages",
+    },
+
+    {
+      "<leader>nd",
+      "<cmd>Noice dismiss<CR>",
+      mode = {
+        "n",
+      },
+      desc = "Dismiss Noice messages",
+    },
+  },
 }
