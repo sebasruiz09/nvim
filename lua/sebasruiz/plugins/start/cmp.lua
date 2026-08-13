@@ -64,12 +64,22 @@ return {
     }, {
       group = vim.api.nvim_create_augroup("SebasCmpBuffer", { clear = true }),
 
-      callback = function()
-        pcall(function()
-          cmp.setup.buffer({
-            enabled = true,
-          })
-        end)
+      callback = function(args)
+        local buftype = vim.bo[args.buf].buftype
+        local filetype = vim.bo[args.buf].filetype
+
+        local disabled_filetypes = {
+          TelescopePrompt = true,
+          snacks_picker_input = true,
+          snacks_picker_list = true,
+          snacks_picker_preview = true,
+          snacks_dashboard = true,
+          lazy = true,
+        }
+
+        cmp.setup.buffer({
+          enabled = buftype ~= "prompt" and buftype ~= "terminal" and not disabled_filetypes[filetype],
+        })
       end,
     })
 
@@ -153,7 +163,6 @@ return {
           behavior = cmp.SelectBehavior.Insert,
         }),
 
-        -- Tab baja por las sugerencias.
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item({
@@ -169,7 +178,6 @@ return {
           "s",
         }),
 
-        -- Shift-Tab sube por las sugerencias.
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item({
@@ -192,6 +200,25 @@ return {
 
         ["<CR>"] = cmp.mapping.confirm({
           select = true,
+        }),
+
+        ["<Esc>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.abort()
+
+            vim.schedule(function()
+              local ok, suggestion = pcall(require, "copilot.suggestion")
+
+              if ok then
+                suggestion.update_preview()
+              end
+            end)
+          else
+            fallback()
+          end
+        end, {
+          "i",
+          "s",
         }),
       }),
 
@@ -280,12 +307,49 @@ return {
       },
 
       enabled = function()
+        local disabled_filetypes = {
+          TelescopePrompt = true,
+          snacks_picker_input = true,
+          snacks_picker_list = true,
+          snacks_picker_preview = true,
+          snacks_dashboard = true,
+          lazy = true,
+        }
+
         if vim.bo.buftype == "prompt" or vim.bo.buftype == "terminal" then
           return false
         end
 
-        return true
+        return not disabled_filetypes[vim.bo.filetype]
       end,
+    })
+
+    cmp.event:on("menu_opened", function()
+      vim.b.copilot_suggestion_hidden = true
+    end)
+
+    cmp.event:on("menu_closed", function()
+      vim.b.copilot_suggestion_hidden = false
+
+      vim.schedule(function()
+        local ok, suggestion = pcall(require, "copilot.suggestion")
+
+        if ok then
+          suggestion.update_preview()
+        end
+      end)
+    end)
+
+    cmp.setup.filetype("gitcommit", {
+      sources = cmp.config.sources({
+        {
+          name = "cmp_git",
+        },
+      }, {
+        {
+          name = "buffer",
+        },
+      }),
     })
 
     cmp.setup.filetype("gitcommit", {

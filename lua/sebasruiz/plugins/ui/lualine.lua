@@ -13,7 +13,7 @@ return {
   },
   lazy = true,
   event = "InsertEnter",
-  theme = "auto",
+  theme = "nightfox",
   config = function()
     require("lualine").setup({
       options = {

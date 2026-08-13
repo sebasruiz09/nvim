@@ -1,8 +1,8 @@
 return {
-  "NvChad/base46",
+  "scottmckendry/cyberdream.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("base46-jellybeans")
+    vim.cmd("colorscheme cyberdream")
   end,
 }
